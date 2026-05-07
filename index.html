@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navin M — Finance & Business Professional</title>
+  <meta name="description" content="Navin M — Aspiring Finance Professional, MBA Candidate. Portfolio showcasing skills in accounting, GST, Tally ERP, and financial management." />
+  <meta name="keywords" content="Navin M, Finance, MBA, Accounting, GST, Tally ERP, Business, Portfolio" />
+  <meta name="author" content="Navin M" />
+  <meta property="og:title" content="Navin M — Finance & Business Professional" />
+  <meta property="og:description" content="Aspiring finance professional with expertise in accounting, GST filing, and financial analysis." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES
+    ============================================================ */
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #111118;
+      --bg3: #16161f;
+      --card: #1a1a25;
+      --border: rgba(255,255,255,0.07);
+      --gold: #c9a84c;
+      --gold2: #e8c97a;
+      --gold-dim: rgba(201,168,76,0.12);
+      --text: #f0ede8;
+      --text2: #a09a90;
+      --text3: #6b6560;
+      --white: #ffffff;
+      --accent: #c9a84c;
+      --shadow: 0 20px 60px rgba(0,0,0,0.5);
+      --radius: 16px;
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    [data-theme="light"] {
+      --bg: #faf8f4;
+      --bg2: #f2ede4;
+      --bg3: #e9e2d6;
+      --card: #ffffff;
+      --border: rgba(0,0,0,0.08);
+      --text: #1a1612;
+      --text2: #5a5248;
+      --text3: #9a9188;
+      --shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      transition: background var(--transition), color var(--transition);
+    }
+    ::selection { background: var(--gold); color: #000; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       NOISE TEXTURE OVERLAY
+    ============================================================ */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--text);
+    }
+    .section-title span { color: var(--gold); }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(10, 10, 15, 0.75);
+      border-bottom: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+    [data-theme="light"] nav { background: rgba(250, 248, 244, 0.85); }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text2);
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-right { display: flex; gap: 0.75rem; align-items: center; }
+    .theme-toggle {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text2);
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--transition);
+    }
+    .theme-toggle:hover { border-color: var(--gold); color: var(--gold); }
+    .nav-resume-btn {
+      padding: 0.5rem 1.25rem;
+      background: var(--gold);
+      color: #000;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .nav-resume-btn:hover { background: var(--gold2); transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text); transition: all var(--transition); border-radius: 2px; }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 65px; left: 0; right: 0;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      flex-direction: column;
+      gap: 1.25rem;
+      z-index: 999;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 0.9rem; color: var(--text2); letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* ============================================================
+       SECTIONS SHARED
+    ============================================================ */
+    section { padding: 6rem 0; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+    .section-header { margin-bottom: 3.5rem; }
+    .divider {
+      width: 40px; height: 2px;
+      background: var(--gold);
+      margin-top: 1rem;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 10% 80%, rgba(201,168,76,0.04) 0%, transparent 50%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 30px; height: 1px;
+      background: var(--gold);
+    }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .hero-name .gold { color: var(--gold); }
+    .hero-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      font-weight: 300;
+      color: var(--text2);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text2);
+      line-height: 1.5;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--gold);
+      color: #0a0a0f;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all var(--transition);
+      border: 1px solid var(--gold);
+    }
+    .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--text);
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    .hero-image-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .hero-image-frame {
+      position: relative;
+      width: 320px;
+      height: 380px;
+    }
+    .hero-image-frame::before {
+      content: '';
+      position: absolute;
+      top: -16px; right: -16px;
+      width: 100%; height: 100%;
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      opacity: 0.35;
+      transition: all var(--transition);
+    }
+    .hero-image-frame::after {
+      content: '';
+      position: absolute;
+      bottom: -16px; left: -16px;
+      width: 50%; height: 50%;
+      border-bottom: 1px solid var(--gold);
+      border-left: 1px solid var(--gold);
+      opacity: 0.35;
+    }
+    .hero-image-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item { text-align: left; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text3);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
+    }
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text3);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    .scroll-indicator i { font-size: 0.8rem; }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    #about { background: var(--bg2); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-left {}
+    .about-img-block {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .about-quick-info { display: flex; flex-direction: column; gap: 0.9rem; }
+    .about-info-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text2);
+    }
+    .about-info-row i { color: var(--gold); width: 18px; font-size: 0.85rem; }
+    .about-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .about-text p {
+      font-size: 0.92rem;
+      color: var(--text2);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .strength-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .strength-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      transition: all var(--transition);
+    }
+    .strength-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .strength-icon {
+      width: 36px; height: 36px;
+      background: var(--gold-dim);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .strength-card h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .strength-card p { font-size: 0.78rem; color: var(--text2); line-height: 1.5; }
+
+    /* ============================================================
+       SKILLS
+    ============================================================ */
+    #skills {}
+    .skills-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .skill-tab {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--text2);
+      cursor: pointer;
+      transition: all var(--transition);
+      background: transparent;
+    }
+    .skill-tab.active, .skill-tab:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #000;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-category-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: all var(--transition);
+    }
+    .skill-category-card:hover { border-color: var(--gold); box-shadow: 0 0 40px rgba(201,168,76,0.06); }
+    .skill-category-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .skill-item { margin-bottom: 1.1rem; }
+    .skill-item:last-child { margin-bottom: 0; }
+    .skill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+    .skill-name { font-size: 0.85rem; font-weight: 500; color: var(--text); }
+    .skill-pct { font-size: 0.72rem; color: var(--gold); font-weight: 600; }
+    .skill-bar { height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      border-radius: 2px;
+      width: 0;
+      transition: width 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .skill-tag {
+      padding: 0.3rem 0.85rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      font-size: 0.75rem;
+      color: var(--text2);
+      transition: all var(--transition);
+    }
+    .skill-tag:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ============================================================
+       EXPERIENCE
+    ============================================================ */
+    #experience { background: var(--bg2); }
+    .timeline { position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 18px; top: 6px;
+      width: 1px; bottom: 0;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      opacity: 0.3;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      transition: all var(--transition);
+    }
+    .timeline-item:hover .timeline-dot {
+      background: var(--gold);
+      color: #000;
+    }
+    .timeline-content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: all var(--transition);
+    }
+    .timeline-content:hover { border-color: rgba(201,168,76,0.3); box-shadow: var(--shadow); }
+    .timeline-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .timeline-company {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .timeline-date {
+      font-size: 0.72rem;
+      padding: 0.3rem 0.85rem;
+      background: var(--gold-dim);
+      color: var(--gold);
+      border-radius: 40px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .timeline-role {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .timeline-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .timeline-list li {
+      font-size: 0.87rem;
+      color: var(--text2);
+      padding-left: 1.25rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .timeline-list li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.45rem;
+      top: 0.55em;
+    }
+
+    /* ============================================================
+       PROJECTS
+    ============================================================ */
+    #projects {}
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.75rem;
+    }
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .project-card:hover { transform: translateY(-5px); border-color: rgba(201,168,76,0.25); box-shadow: var(--shadow); }
+    .project-card:hover::before { transform: scaleX(1); }
+    .project-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--border);
+      position: absolute;
+      top: 1rem; right: 1.5rem;
+      line-height: 1;
+      transition: color var(--transition);
+    }
+    .project-card:hover .project-number { color: rgba(201,168,76,0.1); }
+    .project-icon {
+      width: 44px; height: 44px;
+      background: var(--gold-dim);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+    .project-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--text2);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .tech-badge {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.65rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text3);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+    .project-achievement {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--text2);
+      padding: 0.75rem;
+      background: var(--gold-dim);
+      border-radius: 8px;
+      border-left: 2px solid var(--gold);
+    }
+    .project-achievement i { color: var(--gold); margin-top: 1px; flex-shrink: 0; }
+
+    /* ============================================================
+       EDUCATION
+    ============================================================ */
+    #education { background: var(--bg2); }
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.75rem;
+    }
+    .edu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .edu-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 80px; height: 80px;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+    }
+    .edu-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-3px); }
+    .edu-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-dim);
+      padding: 0.3rem 0.8rem;
+      border-radius: 40px;
+      margin-bottom: 1.25rem;
+    }
+    .edu-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+    .edu-institution {
+      font-size: 0.82rem;
+      color: var(--text2);
+      margin-bottom: 0.6rem;
+    }
+    .edu-duration {
+      font-size: 0.75rem;
+      color: var(--text3);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .edu-duration i { color: var(--gold); font-size: 0.7rem; }
+
+    /* ============================================================
+       CERTIFICATIONS
+    ============================================================ */
+    #certifications {}
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      transition: all var(--transition);
+    }
+    .cert-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .cert-icon {
+      width: 48px; height: 48px;
+      background: var(--gold-dim);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .cert-info h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text); }
+    .cert-info p { font-size: 0.78rem; color: var(--text2); }
+    .cert-verified {
+      margin-top: 0.6rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.68rem;
+      color: #4ade80;
+      font-weight: 500;
+    }
+    .cert-verified i { font-size: 0.65rem; }
+
+    /* INDUSTRIAL VISITS */
+    .visits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .visit-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      transition: all var(--transition);
+    }
+    .visit-card:hover { border-color: rgba(201,168,76,0.3); transform: translateX(4px); }
+    .visit-logo {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .visit-info h4 { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+    .visit-info p { font-size: 0.78rem; color: var(--text2); margin-top: 0.2rem; }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    #contact { background: var(--bg2); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-left {}
+    .contact-left p {
+      font-size: 0.9rem;
+      color: var(--text2);
+      line-height: 1.8;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .contact-details { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: all var(--transition);
+      font-size: 0.85rem;
+      color: var(--text2);
+    }
+    .contact-row:hover { border-color: rgba(201,168,76,0.3); color: var(--text); transform: translateX(4px); }
+    .contact-row i { color: var(--gold); width: 20px; text-align: center; }
+    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-group label { font-size: 0.75rem; font-weight: 500; color: var(--text2); letter-spacing: 0.05em; text-transform: uppercase; }
+    .form-group input,
+    .form-group textarea {
+      padding: 0.85rem 1.25rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: all var(--transition);
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+    .form-group textarea { height: 130px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .btn-send {
+      padding: 0.9rem 2.5rem;
+      background: var(--gold);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--transition);
+      align-self: flex-start;
+    }
+    .btn-send:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .social-link {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text2);
+      font-size: 0.9rem;
+      transition: all var(--transition);
+    }
+    .social-link:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--text3);
+    }
+    footer span { color: var(--gold); }
+
+    /* ============================================================
+       SCROLL TO TOP
+    ============================================================ */
+    #scrollTop {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #000;
+      border: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all var(--transition);
+      z-index: 999;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    }
+    #scrollTop.visible { opacity: 1; transform: translateY(0); }
+    #scrollTop:hover { background: var(--gold2); transform: translateY(-3px); }
+
+    /* ============================================================
+       ANIMATIONS
+    ============================================================ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    .stagger-5 { transition-delay: 0.5s; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-eyebrow { justify-content: center; }
+      .hero-tagline { margin: 0 auto 2.5rem; }
+      .hero-cta { justify-content: center; }
+      .hero-image-wrap { order: -1; }
+      .hero-stats { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-resume-btn { display: none; }
+    }
+    @media (max-width: 600px) {
+      .hero-name { font-size: 3rem; }
+      section { padding: 4rem 0; }
+      .strength-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-image-frame { width: 240px; height: 290px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">NM</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+      <a href="mailto:navinmissm@gmail.com" class="nav-resume-btn">Hire Me</a>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#education" class="mobile-link">Education</a>
+    <a href="#certifications" class="mobile-link">Certifications</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow fade-in">MBA Finance Candidate</div>
+          <h1 class="hero-name fade-in stagger-1">Navin <span class="gold">M</span></h1>
+          <p class="hero-title fade-in stagger-2">Finance Professional · Accounting Specialist · Business Strategist</p>
+          <p class="hero-tagline fade-in stagger-3">Bridging financial precision with strategic insight — turning numbers into decisions that drive growth.</p>
+          <div class="hero-cta fade-in stagger-4">
+            <a href="#projects" class="btn-primary"><i class="fas fa-briefcase"></i> View Projects</a>
+            <a href="#contact" class="btn-outline"><i class="fas fa-paper-plane"></i> Contact Me</a>
+            <a href="#" class="btn-outline" onclick="alert('Resume download ready!')"><i class="fas fa-download"></i> Resume</a>
+          </div>
+          <div class="hero-stats fade-in stagger-5">
+            <div class="stat-item"><div class="stat-num">3+</div><div class="stat-label">Certifications</div></div>
+            <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Projects</div></div>
+            <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Exchange Visits</div></div>
+          </div>
+        </div>
+        <div class="hero-image-wrap fade-in stagger-2">
+          <div class="hero-image-frame">
+            <div class="hero-image-inner">NM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left fade-in">
+          <div class="about-img-block">
+            <div class="about-quick-info">
+              <div class="about-info-row"><i class="fas fa-map-marker-alt"></i> Dindigul, Tamil Nadu</div>
+              <div class="about-info-row"><i class="fas fa-envelope"></i> navinmissm@gmail.com</div>
+              <div class="about-info-row"><i class="fas fa-phone"></i> +91 8438818900</div>
+              <div class="about-info-row"><i class="fab fa-linkedin"></i> linkedin.com/in/navin</div>
+              <div class="about-info-row"><i class="fas fa-graduation-cap"></i> MBA Finance (Pursuing)</div>
+              <div class="about-info-row"><i class="fas fa-language"></i> English · Tamil · Telugu</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-text fade-in stagger-2">
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">A Finance Mind Built on <span>Precision</span></h2>
+          <div class="divider"></div>
+          <p style="margin-top:1.5rem;">I'm Navin M, an aspiring finance professional with a solid foundation in commerce and professional accounting. Currently pursuing my MBA in Finance at ISSM Business School, I combine academic rigor with real-world experience in taxation, GST compliance, and financial record-keeping.</p>
+          <p>My internship at CA Dhanapal & Associates gave me hands-on exposure to the operational side of finance — from GST filing and Tally ERP reconciliations to Excel-driven reporting and collaboration with seasoned professionals.</p>
+          <p>I'm driven by a passion for investment analysis, financial management, and business strategy — and I'm building the expertise to make meaningful contributions to dynamic organizations.</p>
+          <div class="strength-grid">
+            <div class="strength-card fade-in stagger-1">
+              <div class="strength-icon"><i class="fas fa-chart-line"></i></div>
+              <h4>Financial Analysis</h4>
+              <p>Strong foundation in financial data interpretation and reporting.</p>
+            </div>
+            <div class="strength-card fade-in stagger-2">
+              <div class="strength-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+              <h4>GST & Taxation</h4>
+              <p>Practical experience in GST filing and statutory compliance.</p>
+            </div>
+            <div class="strength-card fade-in stagger-3">
+              <div class="strength-icon"><i class="fas fa-calculator"></i></div>
+              <h4>Tally ERP</h4>
+              <p>Certified in Tally ERP 9 with automation for accounting operations.</p>
+            </div>
+            <div class="strength-card fade-in stagger-4">
+              <div class="strength-icon"><i class="fas fa-users"></i></div>
+              <h4>Team Leadership</h4>
+              <p>Active participation in AIM and business management societies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS
+  ============================================================ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">Capabilities</div>
+        <h2 class="section-title">Skills & <span>Expertise</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category-card fade-in stagger-1">
+          <div class="skill-category-title"><i class="fas fa-laptop-code" style="margin-right:0.5rem;"></i>Accounting Tools</div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Tally ERP 9</span><span class="skill-pct">90%</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Microsoft Excel</span><span class="skill-pct">85%</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">MS Word</span><span class="skill-pct">88%</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">MS PowerPoint</span><span class="skill-pct">80%</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
+          </div>
+        </div>
+        <div class="skill-category-card fade-in stagger-2">
+          <div class="skill-category-title"><i class="fas fa-balance-scale" style="margin-right:0.5rem;"></i>Finance & Compliance</div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">GST Filing</span><span class="skill-pct">88%</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Financial Accounting</span><span class="skill-pct">85%</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Auditing Basics</span><span class="skill-pct">75%</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-row"><span class="skill-name">Bank Reconciliation</span><span class="skill-pct">82%</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" data-width="82"></div></div>
+          </div>
+        </div>
+        <div class="skill-category-card fade-in stagger-3">
+          <div class="skill-category-title"><i class="fas fa-brain" style="margin-right:0.5rem;"></i>Soft Skills</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Communication</span>
+            <span class="skill-tag">Time Management</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Analytical Thinking</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Attention to Detail</span>
+            <span class="skill-tag">Adaptability</span>
+            <span class="skill-tag">Leadership</span>
+          </div>
+        </div>
+        <div class="skill-category-card fade-in stagger-4">
+          <div class="skill-category-title"><i class="fas fa-chart-pie" style="margin-right:0.5rem;"></i>Business Knowledge</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Investment Analysis</span>
+            <span class="skill-tag">Financial Management</span>
+            <span class="skill-tag">Business Strategy</span>
+            <span class="skill-tag">Taxation</span>
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">Report Writing</span>
+            <span class="skill-tag">Stock Markets</span>
+            <span class="skill-tag">Budgeting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXPERIENCE
+  ============================================================ -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">Work History</div>
+        <h2 class="section-title">Professional <span>Experience</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <div class="timeline-company">CA Dhanapal & Associates</div>
+              <span class="timeline-date">Internship · 2023–2024</span>
+            </div>
+            <div class="timeline-role">Finance & Accounting Intern</div>
+            <ul class="timeline-list">
+              <li>Led hands-on GST filing processes, ensuring full statutory compliance and zero-error submissions across multiple client accounts.</li>
+              <li>Operated Tally ERP 9 to manage accounting entries, perform reconciliations, and maintain accurate financial records for audit readiness.</li>
+              <li>Developed Microsoft Excel reports and dashboards that improved team efficiency in routine data processing and documentation tasks.</li>
+              <li>Collaborated directly with senior chartered accountants, gaining practical insight into taxation structures, auditing protocols, and financial management workflows.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item fade-in stagger-2">
+          <div class="timeline-dot"><i class="fas fa-users"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <div class="timeline-company">AIM — Association of Intellectual Managers</div>
+              <span class="timeline-date">2022 – Present</span>
+            </div>
+            <div class="timeline-role">Active Member & Contributor</div>
+            <ul class="timeline-list">
+              <li>Participated in business management and intellectual leadership activities fostering strategic thinking and community engagement.</li>
+              <li>Contributed to collaborative events, workshops, and competitions that developed real-world business acumen.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card fade-in stagger-1">
+          <div class="project-number">01</div>
+          <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
+          <h3>Hitting the Field</h3>
+          <p class="project-desc">A market analysis and field research initiative exploring real-world business environments, consumer behaviour, and industry trends through structured fieldwork and data collection.</p>
+          <div class="project-tech">
+            <span class="tech-badge">Market Research</span>
+            <span class="tech-badge">Data Collection</span>
+            <span class="tech-badge">MS Excel</span>
+          </div>
+          <div class="project-achievement"><i class="fas fa-star"></i> Developed primary research skills through direct industry engagement and stakeholder interviews.</div>
+        </div>
+
+        <div class="project-card fade-in stagger-2">
+          <div class="project-number">02</div>
+          <div class="project-icon"><i class="fas fa-search-dollar"></i></div>
+          <h3>Business Explorer</h3>
+          <p class="project-desc">A comprehensive business study exploring organizational structures, financial models, and competitive strategies across sectors, culminating in a detailed analytical report.</p>
+          <div class="project-tech">
+            <span class="tech-badge">Business Analysis</span>
+            <span class="tech-badge">Financial Modeling</span>
+            <span class="tech-badge">Strategic Research</span>
+          </div>
+          <div class="project-achievement"><i class="fas fa-star"></i> Enhanced ability to evaluate business viability through structured financial and strategic frameworks.</div>
+        </div>
+
+        <div class="project-card fade-in stagger-3">
+          <div class="project-number">03</div>
+          <div class="project-icon"><i class="fas fa-bullhorn"></i></div>
+          <h3>Ad Recreation</h3>
+          <p class="project-desc">A creative marketing project that involved reimagining and reconstructing real-world advertisements using contemporary design principles, messaging strategies, and brand positioning techniques.</p>
+          <div class="project-tech">
+            <span class="tech-badge">Marketing Strategy</span>
+            <span class="tech-badge">Brand Positioning</span>
+            <span class="tech-badge">Creative Design</span>
+          </div>
+          <div class="project-achievement"><i class="fas fa-star"></i> Strengthened marketing communication skills and brand storytelling for diverse target audiences.</div>
+        </div>
+
+        <div class="project-card fade-in stagger-4">
+          <div class="project-number">04</div>
+          <div class="project-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>AIM — Intellectual Managers</h3>
+          <p class="project-desc">An organizational leadership and management project as part of the Association of Intellectual Managers, focused on team dynamics, problem-solving, and intellectual business challenges.</p>
+          <div class="project-tech">
+            <span class="tech-badge">Leadership</span>
+            <span class="tech-badge">Management</span>
+            <span class="tech-badge">Team Strategy</span>
+          </div>
+          <div class="project-achievement"><i class="fas fa-star"></i> Demonstrated leadership capabilities and strategic management within a competitive intellectual forum.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EDUCATION
+  ============================================================ -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">Academic Background</div>
+        <h2 class="section-title">Education & <span>Qualifications</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="education-grid">
+        <div class="edu-card fade-in stagger-1">
+          <div class="edu-badge"><i class="fas fa-graduation-cap"></i> Postgraduate</div>
+          <h3>Master of Business Administration</h3>
+          <p class="edu-institution">ISSM Business School — Program in Management (PGPM)</p>
+          <p class="edu-duration"><i class="fas fa-calendar"></i> 2025 – 2027 · Currently Pursuing</p>
+          <p style="font-size:0.82rem; color:var(--text2); margin-top:1rem; line-height:1.6;">Specialization in Finance covering investment management, corporate finance, financial markets, and strategic business management.</p>
+        </div>
+        <div class="edu-card fade-in stagger-2">
+          <div class="edu-badge"><i class="fas fa-university"></i> Undergraduate</div>
+          <h3>Bachelor of Commerce</h3>
+          <p class="edu-institution">Sri Ramakrishna Mission Vidalaya College</p>
+          <p class="edu-duration"><i class="fas fa-calendar"></i> Professional Accounting Specialization · Completed</p>
+          <p style="font-size:0.82rem; color:var(--text2); margin-top:1rem; line-height:1.6;">Comprehensive grounding in professional accounting practices, taxation, auditing, and financial management principles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CERTIFICATIONS
+  ============================================================ -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">Achievements</div>
+        <h2 class="section-title">Certifications & <span>Visits</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card fade-in stagger-1">
+          <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+          <div class="cert-info">
+            <h4>Accounting Technician Course</h4>
+            <p>Comprehensive certification in accounting technician principles and practices.</p>
+            <div class="cert-verified"><i class="fas fa-check-circle"></i> Certified</div>
+          </div>
+        </div>
+        <div class="cert-card fade-in stagger-2">
+          <div class="cert-icon"><i class="fas fa-calculator"></i></div>
+          <div class="cert-info">
+            <h4>Tally ERP 9 & Automation</h4>
+            <p>Advanced certification in Tally ERP 9 including automation and workflow optimization.</p>
+            <div class="cert-verified"><i class="fas fa-check-circle"></i> Certified</div>
+          </div>
+        </div>
+        <div class="cert-card fade-in stagger-3">
+          <div class="cert-icon"><i class="fas fa-table"></i></div>
+          <div class="cert-info">
+            <h4>Microsoft Excel</h4>
+            <p>Data analysis, financial modeling, and advanced spreadsheet reporting techniques.</p>
+            <div class="cert-verified"><i class="fas fa-check-circle"></i> Certified</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Industrial Visits -->
+      <div class="section-header fade-in" style="margin-top:4rem; margin-bottom:1.5rem;">
+        <div class="section-label">Field Exposure</div>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:600; color:var(--text);">Industrial <span style="color:var(--gold);">Visits</span></h3>
+      </div>
+      <div class="visits-grid">
+        <div class="visit-card fade-in stagger-1">
+          <div class="visit-logo">NSE</div>
+          <div class="visit-info">
+            <h4>National Stock Exchange</h4>
+            <p>On-ground exposure to India's premier equity exchange operations and market mechanisms.</p>
+          </div>
+        </div>
+        <div class="visit-card fade-in stagger-2">
+          <div class="visit-logo">BSE</div>
+          <div class="visit-info">
+            <h4>Bombay Stock Exchange</h4>
+            <p>Direct experience of Asia's oldest stock exchange, its trading floor, and financial infrastructure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left fade-in">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title">Let's Work <span>Together</span></h2>
+          <div class="divider"></div>
+          <p>I'm actively seeking opportunities in finance, accounting, and business strategy roles. Whether you have a full-time position, internship, or collaborative project — I'd love to hear from you.</p>
+          <div class="contact-details">
+            <a href="mailto:navinmissm@gmail.com" class="contact-row"><i class="fas fa-envelope"></i> navinmissm@gmail.com</a>
+            <a href="tel:+918438818900" class="contact-row"><i class="fas fa-phone"></i> +91 84388 18900</a>
+            <a href="https://www.linkedin.com/in/navin" target="_blank" class="contact-row"><i class="fab fa-linkedin"></i> linkedin.com/in/navin</a>
+            <div class="contact-row"><i class="fas fa-map-marker-alt"></i> Dindigul, Tamil Nadu, India</div>
+          </div>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/navin" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:navinmissm@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+918438818900" class="social-link"><i class="fas fa-phone"></i></a>
+          </div>
+        </div>
+        <div class="fade-in stagger-2">
+          <div class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Your name" />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="your@email.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" placeholder="Job Opportunity / Collaboration / Query" />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea placeholder="Tell me about the opportunity or how I can help..."></textarea>
+            </div>
+            <button class="btn-send" onclick="alert('Thank you! Your message has been received.')"><i class="fas fa-paper-plane"></i> Send Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <p>Designed & Built for <span>Navin M</span> · MBA Finance · © 2025 · All Rights Reserved</p>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    themeToggle.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      themeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+    });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('open');
+      });
+    });
+
+    // Scroll to Top
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+    });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Intersection Observer for fade-in + skill bars
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Animate skill bars
+          entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width + '%';
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in, .skill-category-card').forEach(el => observer.observe(el));
+
+    // Active nav link highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+      });
+    });
+  </script>
+</body>
+</html>
